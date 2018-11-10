@@ -94,11 +94,88 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="fwk-41-NSM" id="W9p-W5-AM3"/>
+                        <segue destination="ahh-n9-ewh" kind="show" identifier="segueGoToQuestion" id="V8k-H4-ydO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="TLY-jw-gdP">
+            <objects>
+                <viewController id="ahh-n9-ewh" customClass="QuestionViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m66-0g-izh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIg-YC-cOQ">
+                                <rect key="frame" x="22" y="31" width="48" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back:" destination="ahh-n9-ewh" eventType="touchUpInside" id="M1I-zv-Yyv"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segueBack" id="0do-Ad-kRE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oH-Wf-E6m">
+                                <rect key="frame" x="16" y="77" width="343" height="103"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZW-IN-rQL">
+                                <rect key="frame" x="16" y="228" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="TDN-Jf-wdr"/>
+                                    <constraint firstAttribute="height" constant="80" id="tUh-Na-0Xx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeE-uk-A4E">
+                                <rect key="frame" x="209" y="291" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZK-XD-G1v">
+                                <rect key="frame" x="209" y="228" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pz-ya-VXA">
+                                <rect key="frame" x="16" y="291" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEV-sU-Uym">
+                                <rect key="frame" x="112" y="379" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="ahh-n9-ewh" eventType="touchUpInside" id="cer-TC-Riz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kZW-IN-rQL" firstAttribute="leading" secondItem="nbo-oh-heO" secondAttribute="leading" constant="16" id="Bt2-HU-0zh"/>
+                            <constraint firstItem="nbo-oh-heO" firstAttribute="trailing" secondItem="9oH-Wf-E6m" secondAttribute="trailing" constant="16" id="Nzk-rb-ghj"/>
+                            <constraint firstItem="9oH-Wf-E6m" firstAttribute="top" secondItem="yIg-YC-cOQ" secondAttribute="bottom" constant="16" id="W2Q-FL-bDI"/>
+                            <constraint firstItem="9oH-Wf-E6m" firstAttribute="leading" secondItem="nbo-oh-heO" secondAttribute="leading" constant="16" id="rop-Db-yFx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nbo-oh-heO"/>
+                    </view>
+                    <connections>
+                        <outlet property="Question" destination="9oH-Wf-E6m" id="oh3-qq-WJG"/>
+                        <outlet property="choice1" destination="kZW-IN-rQL" id="dv2-jT-Gyk"/>
+                        <outlet property="choice2" destination="9ZK-XD-G1v" id="SMV-IM-Jaj"/>
+                        <outlet property="choice3" destination="8pz-ya-VXA" id="aTb-qm-TvQ"/>
+                        <outlet property="choice4" destination="AeE-uk-A4E" id="nlr-YF-BEp"/>
+                        <outlet property="question" destination="9oH-Wf-E6m" id="Kp5-HL-Qx5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1QY-Wa-mQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160.8" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
