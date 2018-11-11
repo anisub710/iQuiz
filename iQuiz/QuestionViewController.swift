@@ -12,56 +12,71 @@ class QuestionViewController: UIViewController {
     var appData = AppData.shared
     
     @IBOutlet weak var question: UILabel!
+    @IBOutlet weak var choice1: UIButton!
+    @IBOutlet weak var choice2: UIButton!
+    @IBOutlet weak var choice3: UIButton!
+    @IBOutlet weak var choice4: UIButton!
+    
+    @IBOutlet weak var submit: UIButton!
+    
+    weak var prevChoice: UIButton!   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        submit.isEnabled = false
+        submit.backgroundColor = UIColor.lightGray
         fillData()
-        // Do any additional setup after loading the view.
+        
+        let left = UISwipeGestureRecognizer(target: self, action: #selector(gestureHandler))
+        left.direction = .left
+        let right = UISwipeGestureRecognizer(target: self, action: #selector(gestureHandler))
+        right.direction = .right
+        self.view.addGestureRecognizer(left)
+        self.view.addGestureRecognizer(right)
     }
     
-    @IBOutlet weak var choice1: UIButton!
+    @objc func gestureHandler(gesture: UISwipeGestureRecognizer) -> Void {
+        switch gesture.direction{
+        case UISwipeGestureRecognizer.Direction.left:
+            appData.currQuestionIndex = 0
+            appData.quizScore = 0
+            performSegue(withIdentifier: "segueBack", sender: self)
+        case UISwipeGestureRecognizer.Direction.right:
+            if submit.isEnabled {performSegue(withIdentifier: "segueGoToAnswer", sender: self)}
+        default:
+            break
+        }
+    }
     
-    @IBOutlet weak var choice2: UIButton!
-    @IBOutlet weak var choice3: UIButton!
-    
-    @IBOutlet weak var choice4: UIButton!
     func fillData() {
         let currIndex = appData.topicIndex
-        let questions = Array(appData.quizzes[currIndex].questionsAnswers.keys)
-        question.text = questions[appData.currQuestion]
-        let answers = Array(appData.quizzes[currIndex].questionsAnswers)[appData.currQuestion].value
+        let currQuizAnswer = appData.quizzes[currIndex].questionsAnswers
+        question.text = currQuizAnswer[appData.currQuestionIndex].question
+        let answers = currQuizAnswer[appData.currQuestionIndex].answers
         choice1.setTitle(answers[0], for: [])
         choice2.setTitle(answers[1], for: [])
         choice3.setTitle(answers[2], for: [])
         choice4.setTitle(answers[3], for: [])
-//        question.text = questions[0]
-//        switch currIndex {
-//        case 0:
-//            NSLog("Changed to NBA")
-//            question.text =
-//        case 1:
-//            NSLog("Changed to DC")
-//            question.text = "DC"
-//        case 2:
-//            question.text = "Music"
-//        default:
-//            break
-//        }
     }
     
+    @IBAction func choose(_ sender: UIButton) {
+        if prevChoice != nil {
+            prevChoice.backgroundColor = UIColor.blue
+            prevChoice.setTitleColor(UIColor.white, for: [])
+        }
+        submit.isEnabled = true
+        submit.backgroundColor = UIColor.green
+        prevChoice = sender
+        sender.backgroundColor = UIColor.yellow
+        sender.setTitleColor(UIColor.black, for: [])
+        appData.choice = (sender.titleLabel?.text)!
+    }
     @IBAction func submit(_ sender: Any) {
+        performSegue(withIdentifier: "segueGoToAnswer", sender: self)
     }
     @IBAction func back(_ sender: Any) {
+        appData.currQuestionIndex = 0
+        appData.quizScore = 0
         performSegue(withIdentifier: "segueBack", sender: self)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
