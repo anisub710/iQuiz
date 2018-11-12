@@ -37,11 +37,11 @@ class QuestionViewController: UIViewController {
     
     @objc func gestureHandler(gesture: UISwipeGestureRecognizer) -> Void {
         switch gesture.direction{
-        case UISwipeGestureRecognizer.Direction.left:
+        case UISwipeGestureRecognizer.Direction.right:
             appData.currQuestionIndex = 0
             appData.quizScore = 0
             performSegue(withIdentifier: "segueBack", sender: self)
-        case UISwipeGestureRecognizer.Direction.right:
+        case UISwipeGestureRecognizer.Direction.left:
             if submit.isEnabled {performSegue(withIdentifier: "segueGoToAnswer", sender: self)}
         default:
             break
@@ -50,8 +50,8 @@ class QuestionViewController: UIViewController {
     
     func fillData() {
         let currIndex = appData.topicIndex
-        let currQuizAnswer = appData.quizzes[currIndex].questionsAnswers
-        question.text = currQuizAnswer[appData.currQuestionIndex].question
+        let currQuizAnswer = appData.quizzes[currIndex].questions
+        question.text = currQuizAnswer[appData.currQuestionIndex].text
         let answers = currQuizAnswer[appData.currQuestionIndex].answers
         choice1.setTitle(answers[0], for: [])
         choice2.setTitle(answers[1], for: [])

@@ -14,14 +14,14 @@ class ScoreViewController: UIViewController {
         super.viewDidLoad()
         displayResults()
         
-        let left = UISwipeGestureRecognizer(target: self, action: #selector(gestureHandler))
-        left.direction = .left
-        self.view.addGestureRecognizer(left)
+        let right = UISwipeGestureRecognizer(target: self, action: #selector(gestureHandler))
+        right.direction = .right
+        self.view.addGestureRecognizer(right)
     }
     
     @objc func gestureHandler(gesture: UISwipeGestureRecognizer) -> Void {
         switch gesture.direction{
-        case UISwipeGestureRecognizer.Direction.left:
+        case UISwipeGestureRecognizer.Direction.right:
             appData.quizScore = 0
             appData.currQuestionIndex = 0
             performSegue(withIdentifier: "segueGoBackToQuiz", sender: self)
@@ -34,7 +34,7 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var scoreDisplay: UILabel!
     func displayResults(){
         let score = appData.quizScore
-        let total = appData.quizzes[appData.topicIndex].questionsAnswers.count
+        let total = appData.quizzes[appData.topicIndex].questions.count
         result.text = (score == total) ? "Perfect Score!" : "Almost!"
         scoreDisplay.text = "\(score)/\(total)"
     }

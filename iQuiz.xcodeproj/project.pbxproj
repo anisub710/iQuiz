@@ -15,6 +15,7 @@
 		AD48574521855185005CAEBF /* QuizViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48574421855185005CAEBF /* QuizViewCell.swift */; };
 		AD618FCD2197AEEC00764870 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD618FCC2197AEEC00764870 /* AnswerViewController.swift */; };
 		AD618FCF2197B59900764870 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD618FCE2197B59900764870 /* ScoreViewController.swift */; };
+		AD618FD121990EA000764870 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD618FD021990E9F00764870 /* NetworkConnection.swift */; };
 		ADE0C205218FEE8B003903EA /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE0C204218FEE8B003903EA /* QuestionViewController.swift */; };
 		ADE0C207218FEF5A003903EA /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE0C206218FEF5A003903EA /* AppData.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		AD48574421855185005CAEBF /* QuizViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewCell.swift; sourceTree = "<group>"; };
 		AD618FCC2197AEEC00764870 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		AD618FCE2197B59900764870 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		AD618FD021990E9F00764870 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		ADE0C204218FEE8B003903EA /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		ADE0C206218FEF5A003903EA /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 				ADE0C204218FEE8B003903EA /* QuestionViewController.swift */,
 				AD618FCC2197AEEC00764870 /* AnswerViewController.swift */,
 				AD618FCE2197B59900764870 /* ScoreViewController.swift */,
+				AD618FD021990E9F00764870 /* NetworkConnection.swift */,
 				AD48573421853B99005CAEBF /* Main.storyboard */,
 				AD48573721853B9B005CAEBF /* Assets.xcassets */,
 				AD48573921853B9B005CAEBF /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 				AD618FCD2197AEEC00764870 /* AnswerViewController.swift in Sources */,
 				AD48573321853B99005CAEBF /* ViewController.swift in Sources */,
 				AD48573121853B99005CAEBF /* AppDelegate.swift in Sources */,
+				AD618FD121990EA000764870 /* NetworkConnection.swift in Sources */,
 				ADE0C205218FEE8B003903EA /* QuestionViewController.swift in Sources */,
 				AD48574521855185005CAEBF /* QuizViewCell.swift in Sources */,
 				ADE0C207218FEF5A003903EA /* AppData.swift in Sources */,
