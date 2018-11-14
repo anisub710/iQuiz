@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iQuiz/ViewController.swift"
-            timestampString = "563688727.750879"
+            timestampString = "563848420.649253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>

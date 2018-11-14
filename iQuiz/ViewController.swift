@@ -46,6 +46,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             guard let url = URL(string: appData.defaultUrl) else {return}
             URLSession.shared.dataTask(with: url){(data, response, err) in
                 if err != nil {
+                    let uiAlert = UIAlertController(title: "Error Downloading Data", message: "Check your connection or URL", preferredStyle: .alert)
+                    uiAlert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action) in
+                        self.getData()
+                    }))
+                    uiAlert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+                    self.present(uiAlert, animated: true, completion: nil)
                     NSLog("Error: \(String(describing: err))")
                 }
                 if let httpResponse = response as? HTTPURLResponse {
@@ -67,6 +73,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }.resume()
             NSLog("internet connected")
         }else {
+            let uiAlert = UIAlertController(title: "Offline", message: "Network is offline! Check your connection.", preferredStyle: .alert)
+            uiAlert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action) in
+                self.getData()
+            }))
+            uiAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(uiAlert, animated: true, completion: nil)
             if let data = self.storage.object(forKey: "Quiz") as? Data {
                 self.appData.quizzes = try! PropertyListDecoder().decode([Quiz].self, from: data)
             }
