@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD2E043B219BBC9900763B2F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD2E043A219BBC9900763B2F /* Settings.bundle */; };
 		AD48573121853B99005CAEBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48573021853B99005CAEBF /* AppDelegate.swift */; };
 		AD48573321853B99005CAEBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48573221853B99005CAEBF /* ViewController.swift */; };
 		AD48573621853B99005CAEBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD48573421853B99005CAEBF /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD2E043A219BBC9900763B2F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		AD48572D21853B99005CAEBF /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD48573021853B99005CAEBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD48573221853B99005CAEBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				AD48573021853B99005CAEBF /* AppDelegate.swift */,
 				AD48573221853B99005CAEBF /* ViewController.swift */,
 				ADE0C206218FEF5A003903EA /* AppData.swift */,
+				AD2E043A219BBC9900763B2F /* Settings.bundle */,
 				ADE0C204218FEE8B003903EA /* QuestionViewController.swift */,
 				AD618FCC2197AEEC00764870 /* AnswerViewController.swift */,
 				AD618FCE2197B59900764870 /* ScoreViewController.swift */,
@@ -140,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2E043B219BBC9900763B2F /* Settings.bundle in Resources */,
 				AD48573B21853B9B005CAEBF /* LaunchScreen.storyboard in Resources */,
 				AD48573821853B9B005CAEBF /* Assets.xcassets in Resources */,
 				AD48573621853B99005CAEBF /* Main.storyboard in Resources */,
